@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  scrollbar-width: 0px; /* Firefox */
+  -ms-overflow-style: none;
+  margin: 0;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .outer-div {
+    width: 100%;
+    background-color: #f4e9e1;
+    padding: 20px 20px;
+  }
+  .title-div {
+    width: 100%;
+    height: 100%;
+    background-color: #f4e9e1;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px black solid;
+  }
+  .inner-div {
+    width: 100%;
+    height: 100%;
+    background-color: #f4e9e1;
+  }
+  .title-box {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    gap: 40px;
+  }
+  .title {
+    font-family: "Janger";
+    font-size: 7vw;
+    color: red;
+  }
+  .title-div > *:not(:nth-child(3)) {
+    opacity: 0.3;
+    animation: vibrate 0.8s ease-in-out infinite;
+  }
+  .title-div > :nth-child(1) {
+    --vibrate-start: 0%;
+    transform: translate(-20vw);
+    animation-delay: 0.1s; /* delay start by 1 second */
+  }
+  .title-div > :nth-child(2) {
+    --vibrate-start: -20%;
+    transform: translate(-70vw);
+    animation-delay: 0.3s; /* delay start by 1 second */
+  }
+  .title-div > :nth-child(3) {
+    transform: translate(2vw);
+    opacity: 1;
+  }
+  .title-div > :nth-child(4) {
+    --vibrate-start: -40%;
+    transform: translate(-40vw);
+    animation-delay: 0.5s; /* delay start by 1 second */
+  }
+  .title-div > :nth-child(5) {
+    --vibrate-start: -70%;
+    transform: translate(-80vw);
+    animation-delay: 0.7s; /* delay start by 1 second */
+  }
+  @keyframes vibrate {
+    0% {
+      transform: translateX(var(--vibrate-start, 0%));
+    }
+    50% {
+      transform: translateX(calc(var(--vibrate-start, 0%) - 2%));
+    }
+    100% {
+      transform: translateX(var(--vibrate-start, 0%));
+    }
+  }
+}
+@media (min-aspect-ratio: 4/3) {
+  .outer-div {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+  }
+  .container {
+    flex-direction: row;
+  }
+}

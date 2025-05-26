@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  scrollbar-width: 0px; /* Firefox */
+  -ms-overflow-style: none;
+  margin: 0;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .outer-div {
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #f4e9e1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inner-div {
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    background-color: black;
+  }
+  #outer-div-contact-name {
+    height: 70vh;
+  }
+  #inner-div-contact-name {
+    background-color: black;
+    padding: 10%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .part-number {
+    font-family: "Space Grotesk";
+    font-size: 12vw;
+    color: white;
+  }
+
+  .part-name {
+    font-family: "Space Grotesk";
+    font-size: 15vw;
+    color: white;
+  }
+
+  #outer-div-contact-info {
+  }
+
+  #inner-div-contact-info-1 {
+    background-color: black;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    height: 70vh;
+    border-radius: 20px 20px 0px 0px;
+  }
+  #inner-div-contact-info-2 {
+    background-color: black;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    height: 40vh;
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  .profile {
+    flex: 0.5;
+    height: 100%;
+    border: 2px white solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .avatar-video{
+    position: absolute;
+    height: 40vw;
+    background-color: transparent;
+  }
+
+  .dev-names{
+    position: absolute;
+    color: white;
+    font-size: 8vw;
+    font-family: Space Grotesk;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
