@@ -1,0 +1,85 @@
+.outer-div {
+  margin: auto;
+  padding: 20px;
+}
+
+.inner-div {
+  width: 100%;
+  background-color: #f4e9e1;
+  border: black solid 0px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+}
+
+.title-div {
+  border-radius: 20px;
+  background-color: rgb(255, 187, 0);
+  padding-left: 10%;
+  border: 2px solid black;
+}
+
+.content-div {
+  /*background: linear-gradient(45deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);*/
+  background-color: rgb(255, 187, 0);
+  flex: 1;
+  border-radius: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  border: 2px solid black;
+}
+
+.input-field {
+  border-radius: 10px;
+  height: 5vh;
+  border: none;
+  background-color: #ffe8a9;
+  border: solid #ff8400 2px;
+  padding-left: 20px;
+  font-family: Space Grotesk;
+}
+
+label {
+  font-family: "Space Grotesk";
+  font-size: 2vh;
+  color: black;
+  margin-bottom: 1vh;
+  font-weight: bold;
+}
+
+.row-flex-div {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 2vh;
+}
+
+.column-flex-div {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+}
+
+#message-field {
+  padding: 20px;
+}
+
+input[type="button"] {
+  width: 200px;
+  height: 30px;
+  background-color: #ffe8a9;
+  border: solid #ff8400 2px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="button"]:hover {
+  transform: scale(1.1);
+}
+
+input[type="button"]:active{
+  transform: scale(0.9);
+}

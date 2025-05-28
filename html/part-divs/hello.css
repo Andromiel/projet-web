@@ -1,0 +1,43 @@
+body {
+  background-color: transparent;
+}
+.title {
+  font-family: "Janger";
+  font-size: 13vh;
+  color: red;
+}
+#main-title {
+  font-size: 7vw;
+}
+.title-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 40px;
+}
+.title-div {
+  width: 100%;
+  height: 100%;
+  background-color: #f4e9e1;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px black solid;
+}
+
+.title-div > *:not(:nth-child(3)) {
+  opacity: 0.3;
+  animation: vibrate 0.8s ease-in-out infinite;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(var(--vibrate-start, 0%));
+  }
+  50% {
+    transform: translateX(calc(var(--vibrate-start, 0%) - 2%));
+  }
+  100% {
+    transform: translateX(var(--vibrate-start, 0%));
+  }
+}

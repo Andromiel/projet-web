@@ -11,6 +11,29 @@
     <script src="../js/source.js"></script>
   </head>
   <body>
+    <div class="overlay-container">
+      <div class="navigation-pill">
+        <span class="navigation-link">Accueil</span>
+        <span class="navigation-link">Contact</span>
+        <span class="navigation-link">About</span>
+        <div id="search-bar">
+          <div
+            style="
+              background: #ffffff;
+              mask-image: url('../images/Magnifying_glass_icon.svg.png');
+              background-size: cover;
+              mask-repeat: no-repeat;
+              mask-size: contain;
+
+              height: calc(100% - 30px);
+              margin: 0 10px;
+              aspect-ratio: 1;
+              opacity: 1;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
     <div class="custom-scrollbar-container">
       <div>
         <span class="scroll-number">00</span>
@@ -25,9 +48,26 @@
       </div>
     </div>
     <div class="content-container">
-      <div data-part-name="Hello"></div>
+      <div data-part-name="Hello" style="height: 60vw">
+        <iframe
+          src="part-divs/hello.html"
+          style="
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+          "
+        ></iframe>
+      </div>
+      <div data-part-name="Contact" style="height: 100vh">
+        <iframe
+          src="part-divs/contact.html"
+          style="width: 100%; height: 100%; border: none"
+        ></iframe>
+      </div>
       <div data-part-name="About"></div>
       <div data-part-name="Legal" style="height: 200vh"></div>
+      <div data-part-name="Test" style="height: 200vh"></div>
     </div>
   </body>
 </html>

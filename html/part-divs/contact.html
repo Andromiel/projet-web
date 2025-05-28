@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Space Grotesk"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/global-styles.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../js/source.js"></script>
+  </head>
+  <body>
+    <div class="outer-div">
+      <div class="inner-div">
+        <div class="title-div">
+          <h1 style="font-family: 'Space Grotesk'; font-size: 7vh">01</h1>
+          <h1 style="font-family: 'Space Grotesk'; font-size: 10vh">Contact</h1>
+        </div>
+        <div class="content-div">
+          <h2 style="font-family: 'Space Grotesk'; font-size: 5vh">
+            Nous contacter
+          </h2>
+          <h3
+            style="
+              font-family: 'Space Grotesk';
+              font-size: 2vh;
+              font-weight: lighter;
+            "
+          >
+            Vous avez des questions, des suggestions ou simplement voulez
+            échanger sur l'art de vivre une journée idéale ?
+          </h3>
+          <form>
+            <div>
+              <div class="row-flex-div">
+                <div class="column-flex-div">
+                  <label>Nom</label>
+                  <input
+                    type="text"
+                    class="input-field"
+                    placeholder="Jean Dupont"
+                  />
+                </div>
+                <div class="column-flex-div">
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    class="input-field"
+                    placeholder="jean.eude@example.com"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row-flex-div">
+              <div class="column-flex-div" style="flex: 1">
+                <label>Sujet</label>
+                <input
+                  type="text"
+                  class="input-field"
+                  placeholder="Objet du message"
+                />
+              </div>
+            </div>
+            <div class="row-flex-div">
+              <div style="display: flex; flex-direction: column; flex: 1">
+                <label>Message</label>
+                <textarea
+                  type="text"
+                  class="input-field"
+                  id="message-field"
+                  style="height: 20vh"
+                  placeholder="Jean Dupont"
+                ></textarea>
+              </div>
+            </div>
+            <div class="row-flex-div">
+              <div style="display: flex; flex-direction: column; flex: 1">
+                <input type="button" value="Envoyer le message" >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

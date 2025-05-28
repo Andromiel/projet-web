@@ -4,8 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let scrollbar = document.getElementsByClassName(
     "custom-scrollbar-container"
   )[0];
-  let contentTemplate = scrollbar.querySelector("div");
-  scrollbar.replaceChildren();
+  let contentTemplate;
+  if (scrollbar) {
+    contentTemplate = scrollbar.querySelector("div");
+    scrollbar.replaceChildren();
+  }
   containers.forEach((value, key) => {
     const newDiv = contentTemplate.cloneNode(true);
     newDiv.children[0].textContent = "0" + key;
@@ -59,14 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
           content.getBoundingClientRect().top -
           content.parentElement.getBoundingClientRect().top;
         //console.log(title, content, offset);
-        let top =
-          -offset / content.parentElement.getBoundingClientRect().height;
+        let top = -offset / content.getBoundingClientRect().height;
         top = Math.min(1, Math.max(top, 0));
 
         value.querySelector(".scroll-indicator").style.top = top * 100.0 + "%";
       });
-
-      
 
       document
         .querySelectorAll(".content-container > div")
@@ -75,8 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             value.getBoundingClientRect().top -
             value.parentElement.getBoundingClientRect().top;
           //console.log(title, content, offset);
-          let top =
-            -offset / value.parentElement.getBoundingClientRect().height;
+          let top = -offset / value.getBoundingClientRect().height;
 
           let scrollElements = document.querySelectorAll(
             ".custom-scrollbar-container > div"
@@ -99,4 +98,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  var expanded = true;
+  let searchbar = document.querySelector("#search-bar");
+  if (searchbar) {
+    searchbar.addEventListener("click", () => {
+      if (expanded) {
+        searchbar.style.width = "200px";
+      }else{
+        searchbar.style.width = "50px";
+      }
+      expanded=!expanded;
+    });
+  }
 });
