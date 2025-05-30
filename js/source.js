@@ -107,10 +107,48 @@ document.addEventListener("DOMContentLoaded", () => {
     searchbar.addEventListener("click", () => {
       if (expanded) {
         searchbar.style.width = "200px";
-      }else{
+        let hole = document.querySelector("#svg-hole");
+        let svg = document.querySelector('svg')
+        if (hole) {
+          svg.style.height='100%'
+          hole.style.width = "150%";
+          hole.style.x = "-25%";
+          hole.style.height = "150%";
+          hole.style.y = "-25%";
+        }
+      } else {
         searchbar.style.width = "50px";
       }
-      expanded=!expanded;
+      expanded = !expanded;
     });
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    console.log("rendered");
+    let hole = document.querySelector("#svg-hole");
+    console.log(hole);
+    if (hole) {
+      let svg = document.querySelector('svg')
+      svg.style.viewBox = '0 0'
+      console.log("executed");
+      hole.style.width = "150%";
+      hole.style.x = "-25%";
+      hole.style.y = "-25%";
+      hole.style.height = "150%";
+    }
+  }, 1);
+  // OR to set attributes directly:
+  window.addEventListener("resize", () => {
+    let width = window.innerWidth
+    let height = window.innerHeight
+    let hole = document.querySelector("#svg-hole");
+    if (hole) {
+      hole.style.width = width*1.5;
+      hole.style.x = -width*0.25;
+      hole.style.height = height*1.5;
+      hole.style.y = -height*0.25;
+    }
+  });
 });

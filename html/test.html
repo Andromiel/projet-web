@@ -8,28 +8,39 @@
     />
     <link rel="stylesheet" href="../css/global-styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../js/source.js"></script>
   </head>
   <body>
-    <div class="overlay-container">
+    <div class="overlay-container" style="z-index: 5">
+      <div style="width: 100vw; height: 100vh">
+        <svg
+          style="width: 100%; height: 100%"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none" 
+        >
+          <mask id="hole-mask">
+            <!-- White = visible, Black = transparent (hole) -->
+            <rect x="0%" y="0%" width="100%" height="100%" fill="white" />
+            <rect id="svg-hole" />
+          </mask>
+
+          <!-- Apply the mask on a rect covering the whole SVG -->
+          <rect
+            width="100%"
+            height="100%"
+            style="fill: red"
+            mask="url(#hole-mask)"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="overlay-container" id="navigation-container">
       <div class="navigation-pill">
         <span class="navigation-link">Accueil</span>
         <span class="navigation-link">Contact</span>
         <span class="navigation-link">About</span>
         <div id="search-bar">
           <div
-            style="
-              background: #ffffff;
-              mask-image: url('../images/Magnifying_glass_icon.svg.png');
-              background-size: cover;
-              mask-repeat: no-repeat;
-              mask-size: contain;
-
-              height: calc(100% - 30px);
-              margin: 0 10px;
-              aspect-ratio: 1;
-              opacity: 1;
-            "
+            class="mag-glass"
           ></div>
         </div>
       </div>
@@ -69,5 +80,6 @@
       <div data-part-name="Legal" style="height: 200vh"></div>
       <div data-part-name="Test" style="height: 200vh"></div>
     </div>
+    <script src="../js/source.js"></script>
   </body>
 </html>
