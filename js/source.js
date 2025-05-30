@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ".custom-scrollbar-container > div"
       );
       scrollIndicators = Array.from(scrollIndicators);
+      let lastScrollIndicator = scrollIndicators.pop(-1);
       //let lastElement = scrollIndicators.pop();
       scrollIndicators.forEach((value, key) => {
         let title = value.querySelector(".scroll-title").textContent;
@@ -65,7 +66,32 @@ document.addEventListener("DOMContentLoaded", () => {
         let top = -offset / content.getBoundingClientRect().height;
         top = Math.min(1, Math.max(top, 0));
 
-        value.querySelector(".scroll-indicator").style.top = top * 100.0 + "%";
+        if (window.matchMedia("(max-aspect-ratio: 4/3)").matches) {
+          value.querySelector(".scroll-indicator").style.left =
+            top * 100.0 + "%";
+        }
+        if (window.matchMedia("(min-aspect-ratio: 4/3)").matches) {
+          value.querySelector(".scroll-indicator").style.top =
+            top * 100.0 + "%";
+        }
+        console.log("heyyyyyy");
+      });
+
+      [lastScrollIndicator].forEach((value, key) => {
+        let title = value.querySelector(".scroll-title").textContent;
+        let content = document.querySelector(`[data-part-name="${title}"]`);
+        let offset =content.parentElement.getBoundingClientRect().bottom - (content.getBoundingClientRect().top + content.parentElement.getBoundingClientRect().height)
+        let top = offset / (content.getBoundingClientRect().height - content.parentElement.getBoundingClientRect().height);
+        top = Math.min(1, Math.max(top, 0));
+
+        if (window.matchMedia("(max-aspect-ratio: 4/3)").matches) {
+          value.querySelector(".scroll-indicator").style.left =
+            top * 100.0 + "%";
+        }
+        if (window.matchMedia("(min-aspect-ratio: 4/3)").matches) {
+          value.querySelector(".scroll-indicator").style.top =
+            top * 100.0 + "%";
+        }
       });
 
       document
@@ -108,9 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (expanded) {
         searchbar.style.width = "200px";
         let hole = document.querySelector("#svg-hole");
-        let svg = document.querySelector('svg')
+        let svg = document.querySelector("svg");
         if (hole) {
-          svg.style.height='100%'
+          svg.style.height = "100%";
           hole.style.width = "150%";
           hole.style.x = "-25%";
           hole.style.height = "150%";
@@ -130,8 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let hole = document.querySelector("#svg-hole");
     console.log(hole);
     if (hole) {
-      let svg = document.querySelector('svg')
-      svg.style.viewBox = '0 0'
+      let svg = document.querySelector("svg");
+      svg.style.viewBox = "0 0";
       console.log("executed");
       hole.style.width = "150%";
       hole.style.x = "-25%";
@@ -141,14 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 1);
   // OR to set attributes directly:
   window.addEventListener("resize", () => {
-    let width = window.innerWidth
-    let height = window.innerHeight
+    let width = window.innerWidth;
+    let height = window.innerHeight;
     let hole = document.querySelector("#svg-hole");
     if (hole) {
-      hole.style.width = width*1.5;
-      hole.style.x = -width*0.25;
-      hole.style.height = height*1.5;
-      hole.style.y = -height*0.25;
+      hole.style.width = width * 1.5;
+      hole.style.x = -width * 0.25;
+      hole.style.height = height * 1.5;
+      hole.style.y = -height * 0.25;
     }
   });
 });
